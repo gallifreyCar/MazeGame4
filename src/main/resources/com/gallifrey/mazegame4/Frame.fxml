@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.collections.FXCollections?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gallifrey.mazegame4.FxController">
+   <children>
+      <AnchorPane layoutX="363.0" layoutY="-4.0" prefHeight="606.0" prefWidth="441.0" style="-fx-background-color: #2E323B;">
+         <children>
+            <GridPane layoutX="47.0" layoutY="91.0" prefHeight="404.0" prefWidth="349.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label text="地图大小" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei UI Light" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label text="寻路算法" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label prefHeight="28.0" prefWidth="139.0" text="地图生成算法" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <children>
+                        <Label text="开启敌人生成" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <children>
+                        <Label text="设置出发点" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label text="设置终点" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <children>
+                        <Label text="设置窗口分辨率" textFill="WHITE" textOverrun="CLIP">
+                           <font>
+                              <Font name="Microsoft YaHei" size="21.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1">
+                     <children>
+                        <TextField promptText="默认行：41" />
+                        <TextField promptText="默认列：41" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" />
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <TextField promptText="X:随机" />
+                        <TextField promptText="Y:随机" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <children>
+                        <TextField promptText="X:随机" />
+                        <TextField promptText="Y:随机" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="15.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <children>
+                        <TextField promptText="宽：800" />
+                        <TextField promptText="高：800" />
+                     </children>
+                  </HBox>
+                  <CheckBox mnemonicParsing="false" selected="true" text="CheckBox" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <ComboBox fx:id="choseMap" onAction="#chosingMap" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <items>
+                     <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Prim" />
+                        <String fx:value="DFS" />
+                     </FXCollections>
+                  </items>
+               </ComboBox>
+                  <ComboBox prefWidth="150.0" promptText="BFS" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="BFS" />
+                           <String fx:value="DFS" />
+                           <String fx:value="A START" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+
+               </children>
+            </GridPane>
+            <Label contentDisplay="CENTER" layoutX="184.0" layoutY="34.0" text="设置" textFill="WHITE" textOverrun="CLIP">
+               <font>
+                  <Font name="Marlett" size="37.0" />
+               </font>
+            </Label>
+            <Button layoutX="92.0" layoutY="537.0" mnemonicParsing="false" text="保存设置">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button layoutX="258.0" layoutY="537.0" mnemonicParsing="false" text="还原初始值">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Group layoutX="3.0" layoutY="101.0">
+         <children>
+            <Pane layoutX="20.0" layoutY="-103.0" prefHeight="597.0" prefWidth="315.0">
+               <children>
+                  <VBox layoutX="58.0" layoutY="111.0" prefHeight="374.0" prefWidth="201.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="startGame" alignment="CENTER" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#playGame" text="开始游戏">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button fx:id="how" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#Option" text="游戏设置">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button mnemonicParsing="false" text="游戏说明">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                           <children>
+                              <Button onAction="#onHelloButtonClick" text="  制作者  ">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <Label fx:id="welcomeText" alignment="TOP_CENTER" contentDisplay="CENTER" layoutX="-44.0" layoutY="34.0" prefHeight="51.0" prefWidth="404.0" text="GALLIFREY‘S MAZE GAME" textAlignment="CENTER" textFill="#b91f1f" textOverrun="CLIP" underline="true">
+                     <font>
+                        <Font name="Agency FB" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+            </Pane>
+         </children>
+      </Group>
+   </children>
+</Pane>
